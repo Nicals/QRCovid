@@ -2,6 +2,10 @@
   <div>
     <h1>ATTESTATION DE DÉPLACEMENT DÉROGATOIRE</h1>
 
+    <div class="text-center">
+      <img :src="qrCode">
+    </div>
+
     <p>
       En application de l'article 3 du décret du 23 mars 2020 préscrivant les mesures
       générales nécessaires pour faire face à l'épidémie de Covid19 dans le cadre de
@@ -68,8 +72,6 @@
     <p>
       Fait à {{ covidId.city }} le {{ goingOut.startDate }} à {{ goingOut.startTime }}.
     </p>
-
-    <img :src="qrCode">
   </div>
 </template>
 
