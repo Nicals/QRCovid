@@ -4,24 +4,17 @@
       <router-link :to="{name: 'settings'}">Configurer</router-link>
     </p>
 
-    <div v-if="qrCode">
-      <img :src="qrCode">
-      <p>
-        {{ qrContent }}
-      </p>
-    </div>
-
-    <button class="btn btn-primary" @click="generateQRCode">
-      Biboup
-    </button>
-
+    <Certificate v-if="goingOut"
+                 :going-out="goingOut"
+                 :covid-id="covidId">
+    </Certificate>
   </div>
 </template>
 
 
 <script>
 
-import QRCode from 'qrcode';
+import Certificate from './Certificate.vue';
 
 
 export default {
@@ -33,6 +26,7 @@ export default {
         startDate: "24/01/2020",
         startTime: "10h36",
       },
+      covidId: null,
       qrCode: null,
       qrContent: null,
     };
@@ -42,36 +36,11 @@ export default {
     {
       this.$router.push({name: 'settings'});
     }
+
+    this.covidId = localStorage.covidId;
   },
-  methods: {
-    generateQRCode()
-    {
-      const covidId = JSON.parse(localStorage.covidId);
-
-      const content = [
-        `Cree le ${this.goingOut.startDate} a ${this.goingOut.startTime}`,
-        `Nom: ${covidId.lastName}`,
-        `Prenom: ${covidId.firstName}`,
-        `Naissance: ${covidId.birthday} a ${covidId.birthPlace}`,
-        `Adresse: ${covidId.address} ${covidId.city} ${covidId.zipcode}`,
-        `Sortie: ${this.goingOut.startDate} a ${this.goingOut.startTime}`,
-        `Motifs: ${this.goingOut.reasons.join('-')}`,
-      ].join('; ');
-
-      this.qrCode = QRCode.toDataURL(
-        content,
-        {
-          errorCorrectionLevel: 'M',
-          type: 'image/png',
-          quality: 0.92,
-          margin: 1,
-        },
-      ).then((dataURL) => {
-        this.qrCode = dataURL;
-      });
-
-      this.qrContent = content;
-    },
+  components: {
+    Certificate,
   },
 };
 
