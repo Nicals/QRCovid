@@ -1,0 +1,16 @@
+{
+  "name": "qr-covid",
+  "version": "1.0.0",
+  "description": "QR-Covid ========",
+  "private": true,
+  "scripts": {
+    "build": "npx webpack"
+  },
+  "keywords": [],
+  "author": "Nicolas Appriou <nicolas.appriou@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
