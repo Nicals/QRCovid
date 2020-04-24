@@ -1,11 +1,11 @@
 {
   "name": "qr-covid",
   "version": "1.0.0",
-  "description": "QR-Covid ========",
+  "description": "QR-Covid",
   "private": true,
   "scripts": {
-    "build": "webpack",
-    "watch": "webpack --watch"
+    "build": "webpack --mode=production",
+    "watch": "webpack --watch --mode=development"
   },
   "keywords": [],
   "author": "Nicolas Appriou <nicolas.appriou@gmail.com>",
