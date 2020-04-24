@@ -140,7 +140,7 @@ export default {
       const goingOut = {
         reasons,
         startDate: moment().format('DD/MM/YYYY'),
-        startTime: moment().format('HHhMM'),
+        startTime: moment().format('HH[h]mm'),
       };
 
       localStorage.goingOut = JSON.stringify(goingOut);
