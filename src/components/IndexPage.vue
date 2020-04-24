@@ -13,7 +13,8 @@
                  :covid-id="covidId">
     </Certificate>
 
-    <button class="btn btn-danger"
+    <button v-if="goingOut"
+            class="btn btn-danger"
             @click="resetGoingOut">
       Terminer la sortie
     </button>
