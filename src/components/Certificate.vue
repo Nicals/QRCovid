@@ -56,12 +56,12 @@
     </p>
 
     <p>
-      <input type="checkbox" :checked="goingOut.reasons.includes('judiciare')">
+      <input type="checkbox" :checked="goingOut.reasons.includes('judiciaire')">
       Convocation judiciaire ou administrative.
     </p>
 
     <p>
-      <input type="checkbox" :checked="goingOut.reasons.includes('missiosn')">
+      <input type="checkbox" :checked="goingOut.reasons.includes('missions')">
       Participation à des missions d’intérêt général sur demande de l’autorité administrative.
     </p>
 
