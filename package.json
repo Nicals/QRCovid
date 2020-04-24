@@ -11,6 +11,7 @@
   "author": "Nicolas Appriou <nicolas.appriou@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "qrcode": "^1.4.4",
     "vue": "^2.6.11",
     "vue-loader": "^15.9.1",
     "vue-router": "^3.1.6",
