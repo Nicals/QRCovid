@@ -1,0 +1,23 @@
+.cert-tick
+{
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  border: 2px solid black;
+}
+
+.cert-tick.checked:before,
+.cert-tick.checked:after {
+  position: absolute;
+  left: 9px;
+  content: ' ';
+  height: 20px;
+  width: 2px;
+  background-color: #333;
+}
+.cert-tick.checked:before {
+  transform: rotate(45deg);
+}
+.cert-tick.checked:after {
+  transform: rotate(-45deg);
+}
