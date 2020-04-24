@@ -89,14 +89,14 @@
       <div class="btn-group">
         <router-link
           :to="{name: 'index'}"
-          v-slot="{href, navigate}"
+          class="btn btn-secondary"
           >
-          <a :href="href" @click="navigate" class="btn btn-default">Retour</a>
+          Retour
         </router-link>
 
         <button type="submit"
                 class="btn btn-primary">
-          Ok
+          Enregistrer
         </button>
       </div>
     </form>
