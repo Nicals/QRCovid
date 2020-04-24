@@ -35,37 +35,51 @@
     </p>
 
     <p>
-      <span class="cert-tick" :class="{checked: goingOut.reasons.includes('travail')}"></span>
+      <span class="cert-tick">
+        <span v-if="goingOut.reasons.includes('travail')">X</span>
+      </span>
       Déplacements entre le domicile et le lieu d’exercice de l’activité professionnelle, lorsqu'ils sont indispensables à l'exercice d’activités ne pouvant être organisées sous forme de télétravail ou déplacements professionnels ne pouvant être différés;
     </p>
 
     <p>
-      <span class="cert-tick" :class="{checked: goingOut.reasons.includes('courses')}"></span>
+      <span class="cert-tick">
+        <span v-if="goingOut.reasons.includes('courses')">X</span>
+      </span>
       Déplacements pour effectuer des achats de fournitures nécessaires à l’activité professionnelle et des achats de première nécessité dans des établissements dont les activités demeurent autorisées (liste sur gouvernement.fr);
     </p>
 
     <p>
-      <span class="cert-tick" :class="{checked: goingOut.reasons.includes('sante')}"></span>
+      <span class="cert-tick">
+        <span v-if="goingOut.reasons.includes('sante')">X</span>
+      </span>
       Consultations et soins ne pouvant être assurés à distance et ne pouvant être différés ; consultations et soins des patients atteints d'une affection de longue durée;
     </p>
 
     <p>
-      <span class="cert-tick" :class="{checked: goingOut.reasons.includes('famille')}"></span>
+      <span class="cert-tick">
+        <span v-if="goingOut.reasons.includes('famille')">X</span>
+      </span>
       Déplacements pour motif familial impérieux, pour l’assistance aux personnes vulnérables ou la garde d’enfants;
     </p>
 
     <p>
-      <span class="cert-tick" :class="{checked: goingOut.reasons.includes('sport')}"></span>
+      <span class="cert-tick">
+        <span v-if="goingOut.reasons.includes('sport')">X</span>
+      </span>
       éplacements brefs, dans la limite d'une heure quotidienne et dans un rayon maximal d'un kilomètre autour du domicile, liés soit à l'activité physique individuelle des personnes, à l'exclusion de toute pratique sportive collective et de toute proximité avec d'autres personnes, soit à la promenade avec les seules personnes regroupées dans un même domicile, soit aux besoins des animaux de compagnie.
     </p>
 
     <p>
-      <span class="cert-tick" :class="{checked: goingOut.reasons.includes('judiciaire')}"></span>
+      <span class="cert-tick">
+        <span v-if="goingOut.reasons.includes('judiciaire')">X</span>
+      </span>
       Convocation judiciaire ou administrative.
     </p>
 
     <p>
-      <span class="cert-tick" :class="{checked: goingOut.reasons.includes('missions')}"></span>
+      <span class="cert-tick">
+        <span v-if="goingOut.reasons.includes('missions')">X</span>
+      </span>
       Participation à des missions d’intérêt général sur demande de l’autorité administrative.
     </p>
 
@@ -74,6 +88,18 @@
     </p>
   </div>
 </template>
+
+
+<style scoped>
+.cert-tick {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  border: 2px solid black;
+
+  font-size: 15px;
+}
+</style>
 
 
 <script>
