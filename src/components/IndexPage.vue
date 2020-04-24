@@ -4,6 +4,10 @@
       <router-link :to="{name: 'settings'}">Configurer</router-link>
     </p>
 
+    <p>
+      <router-link :to="{name: 'going-out'}">Je veux sortir</router-link>
+    </p>
+
     <Certificate v-if="goingOut"
                  :going-out="goingOut"
                  :covid-id="covidId">
@@ -21,14 +25,8 @@ export default {
   name: 'index-page',
   data() {
     return {
-      goingOut: {
-        reasons: ["walk"],
-        startDate: "24/01/2020",
-        startTime: "10h36",
-      },
       covidId: null,
-      qrCode: null,
-      qrContent: null,
+      goingOut: null,
     };
   },
   mounted() {
@@ -37,7 +35,12 @@ export default {
       this.$router.push({name: 'settings'});
     }
 
-    this.covidId = localStorage.covidId;
+    this.covidId = JSON.parse(localStorage.covidId);
+
+    if (localStorage.goingOut)
+    {
+      this.goingOut = JSON.parse(localStorage.goingOut);
+    }
   },
   components: {
     Certificate,
