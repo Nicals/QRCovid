@@ -8,6 +8,11 @@
       <router-link :to="{name: 'going-out'}">Je veux sortir</router-link>
     </p>
 
+    <button class="btn btn-default"
+            @click="resetGoingOut">
+      Annuler la sortie
+    </button>
+
     <Certificate v-if="goingOut"
                  :going-out="goingOut"
                  :covid-id="covidId">
@@ -41,6 +46,12 @@ export default {
     {
       this.goingOut = JSON.parse(localStorage.goingOut);
     }
+  },
+  methods: {
+    resetGoingOut() {
+      localStorage.removeItem('goingOut');
+      this.goingOut = null;
+    },
   },
   components: {
     Certificate,
