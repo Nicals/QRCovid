@@ -8,15 +8,15 @@
       <router-link :to="{name: 'going-out'}">Je veux sortir</router-link>
     </p>
 
-    <button class="btn btn-default"
-            @click="resetGoingOut">
-      Annuler la sortie
-    </button>
-
     <Certificate v-if="goingOut"
                  :going-out="goingOut"
                  :covid-id="covidId">
     </Certificate>
+
+    <button class="btn btn-danger"
+            @click="resetGoingOut">
+      Terminer la sortie
+    </button>
   </div>
 </template>
 
