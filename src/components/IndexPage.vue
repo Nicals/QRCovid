@@ -12,12 +12,9 @@
     </button>
     <router-link v-else
                  :to="{name: 'going-out'}"
-                 v-slots="{href, navigate}">
-      <a href="href"
-         @click="navigate"
-         class="btn btn-primary">
-        Laissez-moi sortir !
-      </a>
+                 class="btn btn-primary"
+                 >
+      Laissez-moi sortir !
     </router-link>
   </div>
 </template>
