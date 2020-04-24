@@ -4,10 +4,6 @@
       <router-link :to="{name: 'settings'}">Configurer</router-link>
     </p>
 
-    <p>
-      <router-link :to="{name: 'going-out'}">Je veux sortir</router-link>
-    </p>
-
     <Certificate v-if="goingOut"
                  :going-out="goingOut"
                  :covid-id="covidId">
@@ -18,6 +14,15 @@
             @click="resetGoingOut">
       Terminer la sortie
     </button>
+    <router-link v-else
+                 :to="{name: 'going-out'}"
+                 v-slots="{href, navigate}">
+      <a href="href"
+         @click="navigate"
+         class="btn btn-primary">
+        Laissez-moi sortir !
+      </a>
+    </router-link>
   </div>
 </template>
 
