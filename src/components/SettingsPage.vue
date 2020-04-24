@@ -1,8 +1,101 @@
 <template>
   <div>
-    Settings Page
+    <h1>Configuration</h1>
 
-    <router-link :to="{name: 'index'}">Ok</router-link>
+
+    <form @submit.prevent="onSubmit">
+      <div class="form-group">
+        <label for="_first-name">
+          Prénom
+        </label>
+        <input type="text"
+               id="_first-name"
+               class="form-control"
+               required
+               v-model="settings.firstName">
+      </div>
+
+      <div class="form-group">
+        <label for="_last-name">
+          Nom
+        </label>
+        <input type="text"
+               id="_last-name"
+               class="form-control"
+               required
+               v-model="settings.lastName">
+      </div>
+
+      <div class="form-group">
+        <label for="_birthday">
+          Date de naissance
+        </label>
+        <input type="text"
+               id="_birthdate"
+               class="form-control"
+               required
+               v-model="settings.birthday">
+        <small class="form-text text-muted">Au format (jj/mm/aaaa)</small>
+      </div>
+
+      <div class="form-group">
+        <label for="_birth-place">
+          Ville de naissance
+        </label>
+        <input type="text"
+               id="_birth-place"
+               class="form-control"
+               required
+               v-model="settings.birthPlace">
+      </div>
+
+      <div class="form-group">
+        <label for="_address">
+          Adresse
+        </label>
+        <input type="text"
+               id="_address"
+               class="form-control"
+               required
+               v-model="settings.address">
+      </div>
+
+      <div class="form-group">
+        <label for="_city">
+          Ville
+        </label>
+        <input type="text"
+               id="_city"
+               class="form-control"
+               required
+               v-model="settings.city">
+      </div>
+
+      <div class="form-group">
+        <label for="_zipcode">
+          Code postal
+        </label>
+        <input type="text"
+               id="_zipcode"
+               class="form-control"
+               required
+               v-model="settings.zipcode">
+      </div>
+
+      <div class="btn-group">
+        <router-link
+          :to="{name: 'index'}"
+          v-slot="{href, navigate}"
+          >
+          <a :href="href" @click="navigate" class="btn btn-default">Retour</a>
+        </router-link>
+
+        <button type="submit"
+                class="btn btn-primary">
+          Ok
+        </button>
+      </div>
+    </form>
   </div>
 </template>
 
@@ -11,6 +104,31 @@
 
 export default {
   name: 'settings-page',
+  data() {
+    return {
+      settings: {
+        firstName: '',
+        lastName: '',
+        birthday: '',
+        birthPlace: '',
+        address: '',
+        city: '',
+        zipcode: '',
+      },
+    };
+  },
+  mounted() {
+    if (localStorage.covidId)
+    {
+      this.settings = JSON.parse(localStorage.covidId);
+    }
+  },
+  methods: {
+    onSubmit() {
+      window.localStorage.covidId = JSON.stringify(this.settings);
+      this.$router.push({name: 'index'});
+    },
+  },
 };
 
 </script>
