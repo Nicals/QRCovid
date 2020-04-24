@@ -1,0 +1,15 @@
+{
+  "background_color": "purple",
+  "description": "Generates French Covid19 certificates",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "toilet_128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ],
+  "name": "QRCovid",
+  "short_name": "QRCovid",
+  "start_url": "/"
+}
