@@ -1,9 +1,5 @@
 <template>
   <div>
-    <p>
-      <router-link :to="{name: 'settings'}">Configurer</router-link>
-    </p>
-
     <Certificate v-if="goingOut"
                  :going-out="goingOut"
                  :covid-id="covidId">
