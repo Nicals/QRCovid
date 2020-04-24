@@ -5,17 +5,19 @@
                  :covid-id="covidId">
     </Certificate>
 
-    <button v-if="goingOut"
-            class="btn btn-danger"
-            @click="resetGoingOut">
-      Terminer la sortie
-    </button>
-    <router-link v-else
-                 :to="{name: 'going-out'}"
-                 class="btn btn-primary"
-                 >
-      Laissez-moi sortir !
-    </router-link>
+    <div class="text-center p-5">
+      <button v-if="goingOut"
+              class="btn btn-danger"
+              @click="resetGoingOut">
+        Terminer la sortie
+      </button>
+      <router-link v-else
+                   :to="{name: 'going-out'}"
+                   class="btn btn-primary"
+                   >
+        Laissez-moi sortir !
+      </router-link>
+    </div>
   </div>
 </template>
 
