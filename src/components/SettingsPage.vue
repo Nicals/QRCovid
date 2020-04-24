@@ -2,6 +2,10 @@
   <div>
     <h1>Configuration</h1>
 
+    <p v-if="firstTime"
+       class="text-danger">
+      On rempli tout ça avant d'aller plus loin !
+    </p>
 
     <form @submit.prevent="onSubmit">
       <div class="form-group">
@@ -106,6 +110,7 @@ export default {
   name: 'settings-page',
   data() {
     return {
+      firstTime: true,
       settings: {
         firstName: '',
         lastName: '',
@@ -121,6 +126,7 @@ export default {
     if (localStorage.covidId)
     {
       this.settings = JSON.parse(localStorage.covidId);
+      this.firstTime = false;
     }
   },
   methods: {

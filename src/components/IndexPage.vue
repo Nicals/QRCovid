@@ -1,7 +1,8 @@
 <template>
   <div>
-    <router-link :to="{name: 'settings'}">Configurer</router-link>
-    Index Page
+    <p>
+      <router-link :to="{name: 'settings'}">Configurer</router-link>
+    </p>
   </div>
 </template>
 
@@ -10,6 +11,12 @@
 
 export default {
   name: 'index-page',
+  mounted() {
+    if (!localStorage.covidId)
+    {
+      this.$router.push({name: 'settings'});
+    }
+  },
 };
 
 </script>
