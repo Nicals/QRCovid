@@ -62,7 +62,7 @@
              id="_police"
              v-model="reasons.police">
       <label class="form-check-label" for="_police">
-        Je suis convoqué chez les flics (ou autre administration)
+        Je suis convoqué chez les flics (ou autre administration).
       </label>
     </div>
 
@@ -73,6 +73,26 @@
              v-model="reasons.farm">
       <label class="form-check-label" for="_farm">
         Je suis prof. Comme je ne travaille pas, je vais aller récolter des fraises
+      </label>
+    </div>
+
+    <div class="form-check">
+      <input type="checkbox"
+             class="form-check-input"
+             id="_handicap"
+             v-model="reasons.handicap">
+      <label class="form-check-label" for="_handicap">
+        J'accompagne une personne en situation de handicap
+      </label>
+    </div>
+
+    <div class="form-check">
+      <input type="checkbox"
+             class="form-check-input"
+             id="_school"
+             v-model="reasons.school">
+      <label class="form-check-label" for="_school">
+        Je vais chercher les gamins à l'école
       </label>
     </div>
 
@@ -109,6 +129,8 @@ export default {
         work: false,
         police: false,
         farm: false,
+        handicap: false,
+        school: false,
       },
     };
   },
@@ -123,9 +145,9 @@ export default {
       const reasons = [];
 
       if (this.reasons.walk)
-        reasons.push("sport");
+        reasons.push("sport_animaux");
       if (this.reasons.food)
-        reasons.push("courses");
+        reasons.push("achats");
       if (this.reasons.doctor)
         reasons.push("sante");
       if (this.reasons.family)
@@ -133,9 +155,13 @@ export default {
       if (this.reasons.work)
         reasons.push("travail");
       if (this.reasons.police)
-        reasons.push("judiciaire");
+        reasons.push("convocation");
       if (this.reasons.farm)
         reasons.push("missions");
+      if (this.reasons.handicap)
+        reasons.push("handicap");
+      if (this.reasons.school)
+        reasons.push("enfants");
 
       const goingOut = {
         reasons,
