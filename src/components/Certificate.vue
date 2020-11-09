@@ -29,8 +29,12 @@
     </p>
 
     <p>
+    Demeurant: {{ covidId.address }} {{ covidId.zipcode }} {{ covidId.city }}
+    </p>
+
+    <p>
       certifie que mon déplacement est lié au motif suivant (cocher la case) autorisé
-      par le décretn°2020-1310 du 29 octobre 2020 prescrivant les mesures générales
+      par le décret n°2020-1310 du 29 octobre 2020 prescrivant les mesures générales
       nécessaires pour faire face àl'épidémie de Covid19 dans le cadre de l'état
       d'urgence sanitaire [1] :
     </p>
