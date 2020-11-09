@@ -36,7 +36,7 @@
       certifie que mon déplacement est lié au motif suivant (cocher la case) autorisé
       par le décret n°2020-1310 du 29 octobre 2020 prescrivant les mesures générales
       nécessaires pour faire face àl'épidémie de Covid19 dans le cadre de l'état
-      d'urgence sanitaire [1] :
+      d'urgence sanitaire <small>[1]</small> :
     </p>
 
     <p>
@@ -45,7 +45,8 @@
       </span>
       Déplacements entre le domicile et le lieu d’exercice de l’activité professionnelle
       ou un établissement d’enseignement ou de formation, déplacements professionnels
-      ne pouvant être différés [2], déplacements pour un concours ou un examen.
+      ne pouvant être différés <small>[2]</small>, déplacements
+      pour un concours ou un examen.
     </p>
 
     <p>
@@ -53,8 +54,9 @@
         <span v-if="goingOut.reasons.includes('achats')">X</span>
       </span>
       Déplacements pour effectuer des achats de fournitures nécessaires à l'activité
-      professionnelle, des achats de première nécessité [3] dans des établissements
-      dont les activités demeurent autorisées, le retrait de commande et les livraisons
+      professionnelle, des achats de première nécessité <small>[3]</small>
+      dans des établissements dont les activités demeurent autorisées, le retrait
+      de commande et les livraisons
       à domicile.
     </p>
 
@@ -120,6 +122,35 @@
     <p>
       Fait à {{ covidId.city }} le {{ goingOut.startDate }} à {{ goingOut.startTime }}.
     </p>
+
+    <div>
+      <p class="my-0">
+        <small class="text-muted">
+          [1]:
+          Les personnes souhaitant bénéficier de l'une de ces exceptions doivent
+          se munir s'il y a lieu, lors de leurs déplacements hors de leur domicile,
+          d'un document leur permettant de justifier que le déplacement considéré entre
+          dans le champ de l'une de ces exceptions. 
+        </small>
+      </p>
+
+      <p class="my-0">
+        <small class="text-muted">
+         [2]:
+         A utiliser par les travailleurs non-salariés, lorsqu'ils ne peuvent
+         disposer d'un justificatif de déplacement établi par leur employeur.
+        </small>
+      </p>
+
+      <p class="my-0">
+        <small class="text-muted">
+          [3]:
+          Y compris les acquisitions à titre gratuit (distribution de denrées alimentaires...)
+          et les déplacements liés à la perception de prestations sociales et au retrait
+          d'espèces. 
+        </small>
+      </p>
+    </div>
   </div>
 </template>
 
