@@ -18,7 +18,7 @@
              id="_food"
              v-model="reasons.food">
       <label class="form-check-label" for="_food">
-        Je vais acheter à bouffer
+        Je vais acheter des trucs
       </label>
     </div>
 
@@ -74,6 +74,9 @@
       <label class="form-check-label" for="_farm">
         Je suis prof. Comme je ne travaille pas, je vais aller récolter des fraises
       </label>
+      <small class="form-text text-muted">
+        En gros: une mission d'intérêt général...
+      </small>
     </div>
 
     <div class="form-check">
@@ -147,7 +150,7 @@ export default {
       if (this.reasons.walk)
         reasons.push("sport_animaux");
       if (this.reasons.food)
-        reasons.push("achats");
+        reasons.push("achats_culturel_cultuel");
       if (this.reasons.doctor)
         reasons.push("sante");
       if (this.reasons.family)
