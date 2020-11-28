@@ -20,6 +20,14 @@
           Configurer
         </router-link>
       </li>
+      <li class="nav-item mr-auto mt-2 mt-lg-0">
+        <router-link :to="{name: 'about'}"
+                     class="nav-link"
+                     :class="{active: $route.name == 'about'}"
+                     >
+          A propos
+        </router-link>
+      </li>
     </ul>
   </div>
 </nav>

@@ -4,6 +4,7 @@ import Router from 'vue-router';
 import IndexPage from './components/IndexPage.vue';
 import SettingsPage from './components/SettingsPage.vue';
 import GoingOutPage from './components/GoingOutPage.vue';
+import AboutPage from './components/About.vue';
 
 
 Vue.use(Router);
@@ -25,6 +26,11 @@ export default new Router({
       path: '/going-out',
       name: 'going-out',
       component: GoingOutPage,
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: AboutPage,
     },
   ],
 });
